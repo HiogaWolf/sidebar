@@ -1,0 +1,171 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  background-color: #dce4e3;
+}
+
+.pagina {
+  display: flex;
+  align-items: stretch;
+  height: 100vh;
+}
+
+#sidebar {
+  min-width: 230px;
+  max-width: 230px;
+  background-color: #18c29c;
+  transition: all 0.3s;
+  height: 100vh;
+  margin-left: -230px;
+  /* top layer */
+  z-index: 3;
+  border-right: 1px solid #18c29c;
+}
+
+#sidebar.active {
+  margin-left: 0px;
+}
+
+.menu-logo {
+  display: block;
+  background: #18c29c;
+  padding: 19px;
+  text-decoration: none;
+  font-size: 16px;
+  text-align: center;
+  border-bottom: 2px solid ;
+  font-weight: bold;
+  color: black;
+}
+
+.menu-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #18c29c;
+  padding: 16px 20px 16px 20px;
+  text-decoration: none;
+  color: black;
+}
+
+.menu-item:hover {
+  background: #8ed7c6;
+}
+
+.menu-item:nth-last-child(2) {
+  margin-bottom: 40px;
+}
+
+.menu-item.bottom {
+  min-width: 190px;
+  position: absolute;
+  bottom: 0;
+  background: #8ed7c6;
+}
+
+.menu-item::after {
+  content: " ";
+  display: inline-block;
+  border-bottom: 1px solid gray;
+  border-right: 1px solid gray;
+  height: 8px;
+  width: 8px;
+  float: right;
+  transform: rotate(-45deg);
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.conteudo-sidebar {
+  overflow-y: auto;
+  height: 90vh;
+}
+
+ul {
+  display: flex;
+  align-items: center;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid #e7e7e7;
+  background-color: #f3f3f3;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: #666;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #8ed7c6;
+}
+
+li a.active {
+  color: #04aa6d;
+}
+
+#menuBtn {
+  font-size: 24px;
+}
+
+iframe,
+h2,
+p {
+  margin: 20px;
+  color: #666;
+}
+
+@media (max-width: 580px) {
+  #sidebar {
+    position: fixed;
+    top: 0;
+    /* top layer */
+    z-index: 3;
+  }
+  .overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100vw;
+    height: 100vh;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    position: absolute;
+  }
+  .overlay.hidden {
+    display: none;
+  }
+}
+
+.pesquisar{
+  text-align: center;
+  padding: 10px 16px 10px 10px;
+  background-color: #8ed7c6;
+  border-radius: 10px;
+}
+
+.active img{
+  width: 25px;
+}
+
+img{
+  width: 15px;
+  justify-content: space-between;
+}
+
+.left-sidebar  .conteudo-sidebar .foto{
+  width: 70px;
+  border-radius: 15px;
+}
